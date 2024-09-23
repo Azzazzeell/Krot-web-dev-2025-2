@@ -1,0 +1,131 @@
+/* Общие стили */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: left; /* Выравнивание всего текста по левому краю */
+    font-size: 18px; /* Увеличение размера всего текста на пару пунктов */
+    padding-left: 20px; /* Добавление общего отступа слева */
+}
+
+/* Шапка сайта */
+header {
+    text-align: left; /* Выравнивание текста в шапке по левому краю */
+    padding: 20px 20px; /* Добавление отступов слева и справа */
+    background-color: #f8f8f8;
+}
+
+h1 {
+    font-size: 40px; /* Увеличение размера заголовка */
+    margin: 0;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px; /* Увеличение размера текста в навигации */
+    margin-right: 20px;
+}
+
+nav a:hover {
+    color: #ff6347;
+}
+
+/* Основное содержимое */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 26px; /* Увеличение размера заголовков секций */
+    margin-bottom: 10px;
+    text-align: left; /* Выравнивание заголовков по левому краю */
+}
+
+p {
+    font-size: 18px; /* Увеличение размера текста */
+    line-height: 1.5;
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+/* Уменьшенное изображение */
+.image-container {
+    display: flex;
+    flex-direction: column; /* Расположение элементов вертикально */
+    align-items: flex-start; /* Выравнивание по левому краю */
+}
+
+.main-image {
+    width: 50%; /* Уменьшение изображения до 50% от исходного размера */
+    height: auto;
+    margin-bottom: 20px; /* Добавление отступа снизу */
+}
+
+.image-text {
+    flex-grow: 1;
+}
+
+ul {
+    list-style-type: decimal;
+    padding-left: 20px;
+    text-align: left; /* Выравнивание списка по левому краю */
+}
+
+ul li {
+    font-size: 18px; /* Увеличение размера текста в списке */
+    margin-bottom: 10px;
+}
+
+table {
+    width: 50%; /* Ограничение ширины таблицы */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    text-align: left; /* Выравнивание таблицы по левому краю */
+    margin-left: 0; /* Выравнивание таблицы по левому краю */
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center; /* Выравнивание текста внутри ячеек по центру */
+    font-size: 18px; /* Увеличение размера текста в таблице */
+}
+
+th {
+    background-color: #f8f8f8;
+}
+
+/* Футер */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center; /* Выравнивание футера по центру */
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+    text-align: center; /* Выравнивание текста внутри футера по центру */
+    font-size: 18px; /* Увеличение размера текста в футере */
+}
+
+footer a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
