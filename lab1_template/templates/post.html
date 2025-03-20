@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<article class="mb-5">
+    <h1 class="mb-4">{{ post.title }}</h1>
+    <div class="d-flex align-items-center gap-3 text-muted mb-4">
+        <span>{{ post.author }}</span>
+        <span>•</span>
+        <span>{{ post.date.strftime('%d.%m.%Y') }}</span>
+    </div>
+    <img src="{{ url_for('static', filename='images/' + post.image_id) }}" 
+         class="img-fluid rounded mb-4" 
+         alt="Post image">
+    <div class="post-content mb-5">{{ post.text }}</div>
+
+    <section class="mb-5">
+        <h4>Оставьте комментарий</h4>
+        <form>
+            <div class="mb-3">
+                <textarea class="form-control" rows="3" placeholder="Ваш комментарий"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </section>
+
+    <section class="comments">
+        <h4 class="mb-4">Комментарии</h4>
+        {% for comment in post.comments %}
+            <div class="media mb-4">
+                <div class="media-body">
+                    <h5 class="mt-0">{{ comment.author }}</h5>
+                    <p>{{ comment.text }}</p>
+                    {% if comment.replies %}
+                        <div class="ms-5">
+                            {% for reply in comment.replies %}
+                                <div class="media mt-3">
+                                    <div class="media-body">
+                                        <h6 class="mt-0">{{ reply.author }}</h6>
+                                        <p>{{ reply.text }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+</article>
+{% endblock %}

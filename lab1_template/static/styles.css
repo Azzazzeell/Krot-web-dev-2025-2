@@ -1,0 +1,19 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    font-size: 1.1rem;
+}
+
+.post-text {
+    white-space: pre-line;
+}
+
+footer {
+    margin-top: auto;
+    padding: 1rem 0;
+}

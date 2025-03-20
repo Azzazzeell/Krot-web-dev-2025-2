@@ -1,0 +1,13 @@
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{ comment.author }}</h5>
+        <p class="card-text">{{ comment.text }}</p>
+        {% if comment.replies %}
+            <div class="ms-5">
+                {% for reply in comment.replies %}
+                    {% include '_comment.html' with {'comment': reply} %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>
