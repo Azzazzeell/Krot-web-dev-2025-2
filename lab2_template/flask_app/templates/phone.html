@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phone Validation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Validate Phone Number</h1>
+        <form method="POST">
+            <div class="form-group">
+                <input type="text" 
+                       class="form-control {% if error %}is-invalid{% endif %}" 
+                       name="phone" 
+                       value="{{ request.form.phone if request.form.phone }}" 
+                       required>
+                {% if error %}
+                    <div class="invalid-feedback">{{ error[1] }}</div>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Проверить</button>
+        </form>
+        
+        {% if formatted %}
+            <div class="mt-4 alert alert-success">
+                Formatted phone: {{ formatted }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
