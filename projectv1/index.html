@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <p>Logo</p>
+            </div>
+
+            <div class="header-find-text">
+                <input type="text" name="find-text" id="find-text" placeholder="Введите текст">
+                <button class="find-button">Найти!</button>
+                <div class="suggestions-container"></div>
+            </div>
+
+
+            <div class="header-links">
+                <div class="header-links-elements">
+                    <a href="basket.html" class="basket">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
+                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
+                        </svg>
+                    </a>
+
+                    <a href="account.html" class="personal-account">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="notification-section">
+            <p class="notification-text">Текст сообщения</p>
+            <button class="notification-close-button">X</button>
+        </section>
+        
+        <div class="main-container">
+            
+            <aside class="sidebar">
+                <section class="sidebar-category">
+                    <h2>Категории</h2>
+                    <div class="sidebar-category-item">
+                        <input type="checkbox" name="check1" id="check1">
+                        <label for="check1">Категория 1</label>
+                    </div>
+                    
+                    <div class="sidebar-category-item">
+                        <input type="checkbox" name="check2" id="check2">
+                        <label for="check2">Категория 2</label>
+                    </div>
+                    
+                    <div class="sidebar-category-item">
+                        <input type="checkbox" name="check3" id="check3">
+                        <label for="check3">Категория 3</label>
+                    </div>
+                    
+                    <div class="sidebar-category-item">
+                        <input type="checkbox" name="check4" id="check4">
+                        <label for="check4">Категория 4</label>
+                    </div>
+                    
+                    <div class="sidebar-category-item">
+                        <input type="checkbox" name="check5" id="check5">
+                        <label for="check5">Категория 5</label>
+                    </div>
+                </section>
+                
+                <section class="sidebar-price">
+                    <h2>Стоимость</h2>
+                    <div class="price-inputs">
+                        <label for="number1">От</label>
+                        <input type="number" name="number1" id="number1" value="100">
+                        <label for="number2">До</label>
+                        <input type="number" name="number2" id="number2" value="5000">
+                    </div>
+                </section>
+                
+                <div class="price-checkbox">
+                    <input type="checkbox" name="discount-only" id="discount-only">
+                    <label for="discount-only">Только товары со скидками</label>
+                </div>
+                
+                <button class="sidebar-apply-button">Применить</button>
+            </aside>
+            
+            <h2 id="nothing-find-text">Нет товаров, соответствующих вашему запросу</h2>
+            <section class="catalog-container">
+                <section class="catalog-header">
+                    <h2>Каталог</h2>
+                    <select name="catalog-sort" id="catalog-sort">
+                        <option value="rate_dec">По убыванию рейтинга</option>
+                        <option value="rate_inc">По возрастанию рейтинга</option>
+                        <option value="price_dec">По убыванию цены</option>
+                        <option value="price_inc">По возрастанию цены</option>
+                    </select>
+                </section>
+                
+                <section class="catalog-products">
+                </section>
+                
+            </section>
+        </div>
+    </main>
+        
+    <footer class="footer">
+        <div class="footer-container">
+        <p>© 2025 Nersisyan Industries</p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

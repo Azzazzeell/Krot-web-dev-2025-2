@@ -1,0 +1,119 @@
+.basket-text, .nothing-choosen-text, h2{
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.about-user {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Две равные колонки */
+    gap: 20px; /* Расстояние между элементами */
+    max-width: 1200px; /* Ограничиваем максимальную ширину формы */
+    margin: 0 auto; /* Центрируем форму */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-container {
+    grid-template-columns: 1fr;
+}
+
+.about-user h2 {
+    grid-column: 1 / -1; /* Заголовок на всю ширину */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-el,
+.textarea,
+.choose {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-text input,
+textarea,
+select {
+    min-height: 50px;
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical; /* Пользователь может растягивать текстовое поле только по вертикали */
+}
+
+.choose p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn {
+    height: 40px;
+    width: 100%;
+    margin: 5px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+/* Для устройств с шириной экрана до 768px */
+@media (max-width: 768px) {
+    .about-user {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .about-user h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .input-text input,
+    textarea,
+    select {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .btn {
+        font-size: 14px;
+        height: 35px;
+    }
+}
+
+/* Для устройств с шириной экрана до 480px */
+@media (max-width: 480px) {
+    .about-user {
+        gap: 10px;
+    }
+
+    .input-text input,
+    textarea,
+    select {
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+
+    .choose p {
+        font-size: 16px;
+    }
+}

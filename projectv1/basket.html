@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="basket.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <p>Logo</p>
+            </div>
+
+            <div class="header-links">
+                <div class="header-links-elements">
+                    <a href="index.html" class="catalog">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                        </svg>
+                    </a>
+
+                    <a href="account.html" class="personal-account">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="notification-section" id="notification">
+            <p class="notification-text">Текст сообщения</p>
+            <button class="notification-close-button">X</button>
+        </section>
+        
+        <div class="main-container">
+            <h2 class="basket-text">Корзина</h2>
+                
+            <section class="catalog-products" id="basket-items">
+                <h3 class="nothing-choosen-text">Корзина пуста. Перейдите в <a href="index.html">каталог</a>, чтобы добавить товары.</h3>
+            </section>
+            
+            <section class="order-form">
+                <h2>Оформление заказа</h2>
+                <form method="POST" action="http://lab8-api.std-900.ist.mospolytech.ru/labs/api/order?api_key=74d57e6f-5451-4f58-87d7-821086ab82a6">
+                    <section class="about-user">
+                        <div class="form-group">
+                            <label for="full_name">Имя</label>
+                            <input type="text" name="full_name" id="full_name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Номер телефона</label>
+                            <input type="tel" name="phone" id="phone" pattern="[0-9]{11}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+
+                        <div class="form-group checkbox">
+                            <input type="checkbox" name="subscribe" id="subscribe" checked>
+                            <label for="subscribe">Подписаться на рассылку</label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Комментарии к заказу</label>
+                            <textarea name="comment" id="comment"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="delivery_address">Адрес доставки</label>
+                            <input type="text" name="delivery_address" id="delivery_address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="delivery_date">Дата доставки</label>
+                            <input type="date" name="delivery_date" id="delivery_date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="delivery_interval">Время доставки</label>
+                            <select name="delivery_interval" id="delivery_interval">
+                                <option value="18:00-22:00">18:00-22:00</option>
+                                <option value="08:00-12:00">08:00-12:00</option>
+                                <option value="12:00-14:00">12:00-14:00</option>
+                                <option value="14:00-18:00">14:00-18:00</option>
+                            </select>
+                        </div>
+
+                        <div class="order-summary">
+                            <label>Стоимость заказа:</label>
+                            <p id="total-sum">0₽</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button class="btn btn-secondary" type="reset">Сбросить</button>
+                            <button class="btn btn-primary" type="submit">Оформить</button>
+                        </div>
+                    </section>
+                </form>
+            </section>
+        </div>
+    </main>
+        
+    <footer class="footer">
+        <div class="footer-container">
+            <p>© 2025 Nersisyan Industries</p>
+        </div>  
+    </footer>
+
+    <script type="module" src="basket.js"></script>
+</body>
+</html>

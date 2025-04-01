@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="account.css">
+    
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <p>Logo</p>
+            </div>
+
+            <div class="header-links">
+                <div class="header-links-elements">
+                    <a href="index.html" class="catalog">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                        </svg>
+                    </a>
+
+                    <a href="basket.html" class="basket">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
+                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9zM1 7v1h14V7zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5m2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="notification-section" id="notification">
+            <p class="notification-text">Текст сообщения</p>
+            <button class="notification-close-button">X</button>
+        </section>
+
+        <div class="main-container">
+            <h2 class="account-title">Личный кабинет</h2>
+            <section class="orders-section">
+                <h3>Заказы</h3>
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Дата и время</th>
+                            <th>Состав</th>
+                            <th>Стоимость</th>
+                            <th>Доставка</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orders-list">
+                        <tr>
+                            <td>1</td>
+                            <td>01.04.2025 19:54</td>
+                            <td>Товар 1, Товар 2</td>
+                            <td>2000₽</td>
+                            <td>04.04.2025 (18:00-22:00)</td>
+                            <td>
+                                <button class="view-button" data-order-id="1">Просмотр</button>
+                                <button class="edit-button" data-order-id="1">Редактировать</button>
+                                <button class="delete-button" data-order-id="1">Удалить</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+
+        <div class="modal" id="order-modal">
+            <div class="modal-content">
+                <button class="close-modal" id="modal-close">&times;</button>
+                <h2 class="modal-header">Просмотр заказа</h2>
+                <ul class="order-details">
+                    <li><strong>Дата оформления:</strong> <span id="order-date"></span></li>
+                    <li><strong>Имя:</strong> <span id="order-name"></span></li>
+                    <li><strong>Номер телефона:</strong> <span id="order-phone"></span></li>
+                    <li><strong>Email:</strong> <span id="order-email"></span></li>
+                    <li><strong>Адрес доставки:</strong> <span id="order-address"></span></li>
+                    <li><strong>Дата доставки:</strong> <span id="order-delivery-date"></span></li>
+                    <li><strong>Время доставки:</strong> <span id="order-delivery-time"></span></li>
+                    <li><strong>Состав заказа:</strong> <span id="order-items"></span></li>
+                    <li><strong>Стоимость:</strong> <span id="order-cost"></span></li>
+                    <li><strong>Комментарий:</strong> <span id="order-comment"></span></li>
+                </ul>
+
+                <div class="modal-actions">
+                    <button class="btn save-button close-button">Сохранить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="edit-order-modal">
+            <div class="modal-content">
+                <button class="close-modal" id="close-edit-order-modal">&times;</button>
+                <h2>Редактирование заказа</h2>
+                <form id="edit-order-form">
+                    <div class="form-group">
+                        <label for="edit-order-date">Дата оформления</label>
+                        <input type="text" id="edit-order-date" name="order_date" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-order-name">Имя</label>
+                        <input type="text" id="edit-order-name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-order-phone">Номер телефона</label>
+                        <input type="text" id="edit-order-phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-order-email">Email</label>
+                        <input type="email" id="edit-order-email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-order-address">Адрес доставки</label>
+                        <input type="text" id="edit-order-address" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-order-delivery-date">Дата доставки</label>
+                        <input type="date" id="edit-order-delivery-date" name="delivery_date">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-order-delivery-time">Время доставки</label>
+                        <select id="edit-order-delivery-time" name="delivery_time">
+                            <option value="18:00-22:00">18:00-22:00</option>
+                            <option value="08:00-12:00">08:00-12:00</option>
+                            <option value="12:00-14:00">12:00-14:00</option>
+                            <option value="14:00-18:00">14:00-18:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="dflex">
+                            <label>Состав заказа</label>
+                            <p id="orderList">Товар 1, Товар2</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="dflex">    
+                            <label>Стоимость</label>
+                            <p id="edit-price">1000P</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-order-comment">Комментарий</label>
+                        <textarea id="edit-order-comment" name="comment" rows="3"></textarea>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn cancel-button close-button" id="cancel-edit-order">Отмена</button>
+                        <button type="submit" class="btn save-button">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="modal" id="delete-order-modal">
+            <div class="modal-content">
+                <button class="close-modal" id="close-delete-order-modal">&times;</button>
+                <h3>Удаление заказа</h3>
+                <p>Вы уверены, что хотите удалить заказ?</p>
+                <div class="modal-actions mar">
+                    <button class="btn cancel-button" id="delete-confirm">Да</button>
+                    <button class="btn save-button close-button">Нет</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>© 2025 Nersisyan Industries</p>
+        </div>
+    </footer>
+
+    <script type="module" src="account.js"></script>
+</body>
+</html>

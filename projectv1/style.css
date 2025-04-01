@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+
+html, body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    border-bottom: 4px solid black;
+}
+
+.footer {
+    display: flex;
+    padding: 20px;
+    margin-top: auto;
+    border: 2px solid;
+    justify-content: center;
+}
+
+.logo {
+    display: inline-block;
+    padding: 0px 30px;
+    margin-left: 20px;
+    border: 2px solid;
+}
+
+.header-find-text {
+    display: inline-block;
+    position: relative;
+}
+
+
+#find-text {
+    width: 300px;
+    height: 30px;
+}
+
+a svg {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+}
+
+.header-links-elements a {
+    color: black;
+}
+
+.find-button {
+    padding: 7px;
+    background-color: gray;
+    color: whitesmoke;
+    border-radius: 20%;
+    cursor: pointer;
+}
+
+.header-links {
+    display: inline-block;
+}
+
+.header-links-elements {
+    display: flex;
+    flex-wrap: wrap;   
+}
+
+.basket-button {
+    display: inline-block;
+    border: 2px solid;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.personal-account-button {
+    display: inline-block;
+    border: 2px solid;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.product-name {
+    font-size: large;
+}
+
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-name {
+    max-width: 200px;
+    display: -webkit-box; /* Использовать флекс-блок для ограничения строк */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    -webkit-line-clamp: 2; /* Максимум 2 строки */
+    overflow: hidden; /* Скрыть лишний текст */
+    text-overflow: ellipsis; /* Многоточие */
+    cursor: pointer; /* Указываем, что с элементом можно взаимодействовать (наведемся, а там тултипа вылезет) */
+}
+
+.notification-section {
+    display: none;
+    background-color: lightgreen;
+    padding: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.notification-close-button {
+    padding: 5px;
+    background: none;
+}
+
+.product-button-add {
+    margin-bottom: 9px;
+    padding: 5px 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.catalog-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.catalog-header {
+    margin-bottom: 20px;
+}
+
+.product-card {
+    display: flex;
+    flex-flow: column wrap;
+    width: 300px;
+    max-height: 550px;
+    border: 2px solid transparent;
+    align-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+}
+
+.active-card {
+    border: 2px solid blue;
+}
+
+.product-img img {
+    margin-top: 20px;
+    border-radius: 35px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.catalog-products {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    gap: 15px;
+}
+
+.product-current-price::after {
+    content: ' ₽';
+}
+
+.product-previous-price {
+    color: red;
+    text-decoration: line-through;
+}
+
+.product-previous-price::after {
+    content: ' ₽'; /* Добавляем символ рубля */ 
+}
+
+.product-discount {
+    color: red;
+    font-weight: bold;
+}
+
+.product-price-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.sidebar {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.sidebar-category, .sidebar-price {
+    margin-bottom: 20px;
+}
+
+.sidebar-price {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.price-inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.price-inputs input {
+    max-width: 80px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.price-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между чекбоксом и текстом */
+}
+
+.sidebar-apply-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.load-more-button {
+    grid-column: 1 / -1; /* Растягиваем на всю ширину */
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    min-width: 70%;
+    cursor: pointer;
+}
+
+.header-container {
+    padding: 5px;
+}
+
+#nothing-find-text {
+    display: none;
+}
+
+.suggestions-container {
+    position: absolute;
+    background-color: white;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    width: calc(100% - 10px); /* Ширина совпадает с шириной поля */
+    margin-top: 5px; /* Отступ от поля ввода */
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Медиа запросы, для мобильной версии */
+
+@media (max-width: 1250px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .catalog-products {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .catalog-products {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    #find-text {
+        width: 100%;
+    }
+
+    .catalog-products {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .find-button {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .product-img img {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-card {
+        width: 100%;
+        max-height: unset;
+    }
+
+    .catalog-header {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
